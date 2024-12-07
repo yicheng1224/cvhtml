@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #4CAF50;
+            cursor: pointer; /* Indicates clickable */
+            user-select: none;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 1s forwards;
+
+        }
+        p {
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-list {
+            list-style-type: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .info-list li {
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+        }
+        
+       
+
+        .link-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .link-btn:hover {
+            background-color: #45a049;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        
+        
+        li:visited {
+        color: green;
+        }
+        當滑鼠停留在上頭  連結的底線移除
+        
+        h2:hover {
+            color: orange;  /* 懸停時改變顏色 */
+            cursor: pointer;  /* 滑鼠指針變為手形 */
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>個人履歷</h1>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">基本資料</h2>
+            <ul class="info-list">
+                <li><strong>姓名：</strong> 林奕辰</li>
+                <li><strong>年齡：</strong> 20 歲</li>
+                <li><strong>學號：</strong> B1245004</li>
+                <li><strong>系級：</strong> 數位金融科技學系二年級</li>
+                <li><strong>聯絡方式：</strong> <a href="mailto:B1245004@cgu.edu.tw">B1245004@cgu.edu.tw</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleSection(this)">學歷</h2>
+            <ul class="info-list">
+                <li><a href=>及人中學#倒閉:( </a></li>
+                <li><a href="https://www.sssh.tp.edu.tw/home">松山高中</a></li>
+                <li><a href="https://ft.cgu.edu.tw/">長庚大學----數位金融科技學系</a></li>
+                <li><a href=>cg academy、Philinter----language school</a></li>
+
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleSection(this)">專長</h2>
+            <ul class="info-list">
+                <li><a href="skills.html">程式設計 (Python,C#,MS SQL,R語言,HTML, CSS, JavaScript )</a></li>
+                <li><a href="skills.html">大學專業科目:財金理論與應用、數據分析、區塊鏈智慧合約、財金智能工具開發</a></li>
+                <li><a href="skills.html">大學專題:金融app</a></li>
+            </ul>
+        </div>
+        <!-- <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+            </div>
+        </div>
+ -->
+        <div class="section">
+            <h2 onclick="toggleSection(this)">興趣</h2>
+            <ul class="info-list">
+                <li><a >關注科技時事</a></li>
+                <li><a >籃球、單車</a></li>
+                <li><a >旅行</a></li>
+                <li><a >露營</a></li>
+                <li><a >休閒電子遊戲</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleSection(this)">工作經歷</h2>
+            <ul class="info-list">
+                <li><a >亞洲志遠科技股份有限公司----實習</a></li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <script>
+        function toggleSection(element) {
+            const list = element.nextElementSibling;
+            list.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<script>
+        
+    function toggleSection(element) {
+        const list = element.nextElementSibling;
+        if (list.style.maxHeight) {
+            list.style.maxHeight = null;  // 收合清單
+        } else {
+            list.style.maxHeight = list.scrollHeight + "px";  // 展開到內容高度
+        }
+    }
+    
+    // 显示或隐藏按钮
+    window.onscroll = function() {
+    const btn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";  // 滚动超过300px显示按钮
+    } else {
+        btn.style.display = "none";
+    }
+    }
+
+    // 返回顶部的函数
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });  // 平滑滚动到顶部
+    }
+
+
+    function adjustBackToTopButton() {
+        const feedbackHeight = feedbackSection.offsetHeight;
+        const defaultBottom = 20; // 預設底部距離
+    
+        if (feedbackHeight > 40) { // 問題反饋區塊展開時
+            btn.style.bottom = feedbackHeight + defaultBottom + 'px';
+        } else { // 問題反饋區塊收起時
+            btn.style.bottom = defaultBottom + 'px';
+        }
+    }
+    
+    // 監聽問題反饋區塊的滑鼠事件
+    feedbackSection.addEventListener('mouseenter', adjustBackToTopButton);
+    feedbackSection.addEventListener('mouseleave', adjustBackToTopButton);
+
+    // 確保在頁面載入或大小變動時正確位置
+    window.addEventListener('resize', adjustBackToTopButton);
+    window.addEventListener('load', adjustBackToTopButton);
+
+    // 监听鼠标进入和离开反馈区，动态调整按钮位置
+    const feedbackSection = document.querySelector('.feedback-section');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    feedbackSection.addEventListener('mouseenter', function() {
+        backToTopBtn.style.bottom = '80px';  // 向上移动，避免被遮挡
+    });
+
+    feedbackSection.addEventListener('mouseleave', function() {
+        backToTopBtn.style.bottom = '20px';   // 恢复原始位置
+    });
+
+
+     // 调整内容 padding，确保不被反馈栏遮挡
+    function adjustContentPadding() {
+        const feedbackSection = document.querySelector('.feedback-section');
+        const container = document.querySelector('.container');
+        const feedbackHeight = feedbackSection.offsetHeight;
+        
+        container.style.marginBottom = `${feedbackHeight + 20}px`; // 预留空间
+    }
+
+     // 页面加载和窗口大小调整时触发
+    window.addEventListener('resize', adjustContentPadding);
+    window.addEventListener('load', adjustContentPadding);
+
+    //在鼠标悬停时展开反馈表单，移开时收起：
+    document.querySelector('.feedback-section').addEventListener('mouseenter', function() {
+        this.style.height = 'auto';  // 扩展高度
+        document.querySelector('.feedback-form').style.display = 'block';  // 显示表单
+    });
+    
+    document.querySelector('.feedback-section').addEventListener('mouseleave', function() {
+        this.style.height = '40px';  // 收起高度
+        document.querySelector('.feedback-form').style.display = 'none';  // 隐藏表单
+    });
+    
+   
+</script>

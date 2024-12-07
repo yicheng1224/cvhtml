@@ -1,0 +1,228 @@
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0 0 140px; /* 預留底部反饋欄空間 */
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s forwards;
+}
+
+h1 {
+    color: #18286e;
+}
+
+h2 {
+    color: #4CAF50;
+    cursor: pointer; /* 顯示為可點擊 */
+}
+
+p {
+    line-height: 1.6;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 5px;
+}
+
+/* 連結按鈕樣式 */
+.link-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.link-btn:hover {
+    background-color: #45a049;
+}
+
+/* 回到頂部按鈕樣式 */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: calc(50px + 2rem);
+    right: 20px;
+    z-index: 1000;
+    background-color: #0f7979;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.3s ease, background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #0b6753;
+}
+
+/* 動畫效果 */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 反饋部分樣式 */
+.feedback-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    transition: height 0.5s ease;
+    height: 40px;
+    overflow: hidden;
+}
+
+.feedback-header {
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.feedback-form {
+    display: none;
+    padding: 20px;
+}
+
+/* 表單通用輸入框樣式 */
+.feedback-section input[type="email"],
+.feedback-section input[type="text"],
+.feedback-section input[list] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #555;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.feedback-section input:focus {
+    background-color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 提交按鈕樣式 */
+.feedback-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.feedback-section button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 滑桿樣式 */
+.satisfaction-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.satisfaction-slider input[type="range"] {
+    appearance: none;
+    width: 60%;
+    height: 10px;
+    background: linear-gradient(to right, #912727, #4CAF50);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.satisfaction-slider input[type="range"]:hover {
+    background: linear-gradient(to right, #4CAF50, #912727);
+}
+
+.satisfaction-slider input[type="range"]::-webkit-slider-thumb,
+.satisfaction-slider input[type="range"]::-moz-range-thumb,
+.satisfaction-slider input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4b1d44;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.satisfaction-slider input[type="range"]::-webkit-slider-thumb:hover,
+.satisfaction-slider input[type="range"]::-moz-range-thumb:hover,
+.satisfaction-slider input[type="range"]::-ms-thumb:hover {
+    transform: scale(1.2);
+    background: #6b1d64;
+}
+
+/* 標籤文字樣式 */
+.icon-label {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* 響應式樣式 */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}

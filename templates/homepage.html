@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人履歷</title>
+    <link rel="icon" href="{{ url_for('static', filename='mask.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <script src="{{ url_for('static', filename='js/homepage.js') }}" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>個人履歷</h1>
+        <!--  -->
+        <!-- <button onclick="toggleTheme()">切換夜間模式</button> -->
+        <div class="section">
+            <h2 onclick="toggleSection(this)">基本資料</h2>
+            <ul class="info-list">
+                <li><strong>姓名：</strong> 林奕辰</li>
+                <li><strong>年齡：</strong> 20 歲</li>
+                <li><strong>學號：</strong> B1245004</li>
+                <li><strong>系級：</strong> 數位金融科技學系二年級</li>
+                <li><strong>聯絡方式：</strong> <a href="mailto:B1245004@cgu.edu.tw">B1245004@cgu.edu.tw</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleSection(this)">學歷</h2>
+            <ul class="info-list">
+                <li><a >及人中學#倒閉(〒︿〒) </a></li>   
+                <li><a href="https://www.sssh.tp.edu.tw/home" onclick="return  confirmRedirect(this)">松山高中</a></li>
+                <li><a href="https://ft.cgu.edu.tw/" onclick="return confirmRedirect(this)" >長庚大學----數位金融科技學系</a></li>
+                <li><a >cg academy、Philinter----language school</a></li>
+
+            </ul>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleSection(this)">專長</h2>
+            <ul class="info-list">
+                <li><a>程式設計 (Python,C#,MS SQL,R語言,HTML, CSS, JavaScript )</a></li>
+                <li><a>大學專業科目:財金理論與應用、數據分析、區塊鏈智慧合約、財金智能工具開發</a></li>
+                <li><a>大學專題:金融app</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleSection(this)">興趣</h2>
+            <ul class="info-list">
+                <li><a >關注科技時事</a></li>
+                <li><a >籃球、單車</a></li>
+                <li><a >旅行</a></li>
+                <li><a >露營</a></li>
+                <li><a >休閒電子遊戲</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleSection(this)">工作經歷</h2>
+            <ul class="info-list">
+                <li><a >無</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="feedback-section">
+        <div class="feedback-header">問題與反饋</div>
+        <div class="feedback-form">
+            <form action="/submit" method="POST">
+                <label for="email">e-mail:
+                    <input type="email" id="email" name="email" placeholder="請輸入電子信箱" >
+                </label>
+                <br>
+                <label>單位:
+                    <input list="part" name="identity" required>
+                </label>
+                <datalist id="part">
+                    <option value="老師 ">
+                    <option value=" 學生 ">
+                    <option value=" 上班族">
+                </datalist>
+                <br>
+                <label for="response">想說的話:
+                    <input type="text" id="response" name="response" placeholder="請給高見" required>
+                </label>
+                <br>
+                <label for="satisfaction">滿意度評分:</label>
+                <div class="satisfaction-slider">
+                    <span class="icon-label">👎 差</span>
+                    <input type="range" id="satisfaction" name="satisfaction" min="0" max="100" step="10" value="50"  >
+                    <span class="icon-label">👍 最好</span>
+                </div>
+                <br>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="返回顶部">返回顶部</button>
+
+
+<!-- 為標題或按鈕增加微妙的縮放和陰影效果，使互動更有趣。切換夜間模式、回饋給星 
+ https:/jqueryui.com ，-->
+
+
+</body>
+</html>
